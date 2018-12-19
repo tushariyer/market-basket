@@ -1,0 +1,32 @@
+<!-- Tushar Iyer -->
+<!-- CSCI 621 | MongoDB Project | Fall 2018 -->
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>
+            Login
+        </h1>
+        {{# if errs}}
+            <div class="alert alert-danger">
+                {{# each messages }}
+                    <p>{{ this }}</p>
+                {{/each}}
+            </div>
+        {{/if}}
+        <form action="/user/login" method="post">
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input class="form-control" type="text" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="password">
+            </div>
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <button class="btn btn-success" type="submit">Log In</button>
+        </form>
+        <hr>
+        <p>No Account? <a href="/user/register">Register Now</a></p>
+        <hr>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+/* Tushar Iyer */
+/* CSCI 621 | MongoDB Project | Fall 2018 */
+
+.thumbnail img{
+    max-height: 200px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+}

@@ -1,0 +1,28 @@
+<!-- Tushar Iyer -->
+<!-- CSCI 621 | MongoDB Project | Fall 2018 -->
+
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>User Account</h1>
+        <hr>
+        <h2>Order History</h2>
+        {{# each orders }}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        {{# each this.items}}
+                            <li class="list-group-item">
+                                <span class="badge badge-success">$ {{ this.price }} per item</span>
+                                {{ this.item.title }} <span class="badge badge-primary">Qty: {{ this.qty }}</span>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <strong>Order Total: ${{ this.basket.totalPrice }}</strong>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
